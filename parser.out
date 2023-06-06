@@ -1,0 +1,314 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    and
+    array
+    begin
+    boolean
+    case
+    const
+    def
+    div
+    do
+    downto
+    end
+    endif
+    endwhile
+    function
+    ignora
+    integer
+    mod
+    not
+    numero_mf
+    of
+    op_a_colchete
+    op_aspas
+    op_divisao
+    op_dois_pontos
+    op_f_colchete
+    op_multiplicar
+    op_negacao
+    op_ponto
+    op_ponto_virgula
+    or
+    procedure
+    program
+    range
+    repeat
+    return
+    string_mf
+    then
+    to
+    until
+    variavel
+    variavel_mf
+    write
+    writeln
+
+Grammar
+
+Rule 0     S' -> statements
+Rule 1     statements -> statements statement
+Rule 2     statements -> statement
+Rule 3     statement -> op_comentario
+Rule 4     statement -> while op_a_parenteses cond_param op_f_parenteses op_a_chaves statements op_f_chaves
+Rule 5     statement -> for op_a_parenteses var op_igual int op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 6     statement -> for op_a_parenteses reserved op_igual int op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 7     statement -> for op_a_parenteses var op_igual int op_virgula cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 8     statement -> for op_a_parenteses var op_igual int op_virgula cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 9     statement -> for op_a_parenteses reserved op_igual int op_virgula cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 10    statement -> for op_a_parenteses var op_igual int op_virgula cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 11    statement -> for op_a_parenteses reserved op_igual int op_virgula cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 12    statement -> for op_a_parenteses reserved op_igual int op_virgula cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 13    statement -> for op_a_parenteses var op_igual var op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 14    statement -> for op_a_parenteses reserved op_igual var op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 15    statement -> for op_a_parenteses var op_igual reserved op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 16    statement -> for op_a_parenteses var op_igual var op_virgula cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 17    statement -> for op_a_parenteses var op_igual var op_virgula cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 18    statement -> for op_a_parenteses reserved op_igual reserved op_virgula cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 19    statement -> for op_a_parenteses reserved op_igual var op_virgula cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 20    statement -> for op_a_parenteses reserved op_igual var op_virgula cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 21    statement -> for op_a_parenteses var op_igual reserved op_virgula cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 22    statement -> for op_a_parenteses var op_igual reserved op_virgula cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 23    statement -> for op_a_parenteses var op_igual var op_virgula cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 24    statement -> for op_a_parenteses reserved op_igual reserved op_virgula cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 25    statement -> for op_a_parenteses var cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 26    statement -> for op_a_parenteses reserved cond_param op_virgula var op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 27    statement -> for op_a_parenteses var cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 28    statement -> for op_a_parenteses var cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 29    statement -> for op_a_parenteses reserved cond_param op_virgula reserved op_igual var op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 30    statement -> for op_a_parenteses reserved cond_param op_virgula var op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 31    statement -> for op_a_parenteses var cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 32    statement -> for op_a_parenteses reserved cond_param op_virgula reserved op_igual reserved op_mais int op_f_parenteses op_a_chave statements op_f_chave
+Rule 33    statement -> var op_igual expr
+Rule 34    statement -> var op_igual string
+Rule 35    statement -> var op_igual var
+Rule 36    statement -> var op_igual reserved
+Rule 37    statement -> var op_igual int
+Rule 38    statement -> var op_igual double
+Rule 39    statement -> var op_igual CHAR
+Rule 40    statement -> var op_igual funcao
+Rule 41    statement -> var op_somar int
+Rule 42    statement -> var op_somar double
+Rule 43    statement -> var op_somar var
+Rule 44    statement -> var op_somar reserved
+Rule 45    statement -> var op_diminuir int
+Rule 46    statement -> var op_diminuir double
+Rule 47    statement -> var op_diminuir var
+Rule 48    statement -> var op_diminuir reserved
+Rule 49    statement -> reserved op_igual expr
+Rule 50    statement -> reserved op_igual string
+Rule 51    statement -> reserved op_igual var
+Rule 52    statement -> reserved op_igual reserved
+Rule 53    statement -> reserved op_igual int
+Rule 54    statement -> reserved op_igual double
+Rule 55    statement -> reserved op_igual CHAR
+Rule 56    statement -> reserved op_igual funcao
+Rule 57    statement -> reserved op_somar int
+Rule 58    statement -> reserved op_somar double
+Rule 59    statement -> reserved op_somar var
+Rule 60    statement -> reserved op_somar reserved
+Rule 61    statement -> reserved op_diminuir int
+Rule 62    statement -> reserved op_diminuir double
+Rule 63    statement -> reserved op_diminuir var
+Rule 64    statement -> reserved op_diminuir reserved
+Rule 65    statement -> if op_a_parenteses cond_param op_f_parenteses op_a_chave statements op_f_chave
+Rule 66    statement -> if op_a_parenteses cond_param op_f_parenteses op_a_chave statements op_f_chave senaose
+Rule 67    statement -> if op_a_parenteses cond_param op_f_parenteses op_a_chave statements op_f_chave senaose else op_a_chave statements op_f_chave
+Rule 68    statement -> if op_a_parenteses cond_param op_f_parenteses op_a_chave statements op_f_chave else op_a_chave statements op_f_chave
+Rule 69    statement -> funcao op_a_chave statements op_f_chave
+Rule 70    cond_param -> var op_menorque int
+Rule 71    cond_param -> var op_menorque double
+Rule 72    cond_param -> var op_menorque var
+Rule 73    cond_param -> var op_menorque reserved
+Rule 74    cond_param -> reserved op_menorque int
+Rule 75    cond_param -> reserved op_menorque double
+Rule 76    cond_param -> reserved op_menorque var
+Rule 77    cond_param -> reserved op_menorque reserved
+Rule 78    cond_param -> var op_maiorque int
+Rule 79    cond_param -> var op_maiorque double
+Rule 80    cond_param -> var op_maiorque var
+Rule 81    cond_param -> var op_maiorque reserved
+Rule 82    cond_param -> reserved op_maiorque int
+Rule 83    cond_param -> reserved op_maiorque double
+Rule 84    cond_param -> reserved op_maiorque var
+Rule 85    cond_param -> reserved op_maiorque reserved
+Rule 86    cond_param -> var op_menorigualque int
+Rule 87    cond_param -> var op_menorigualque double
+Rule 88    cond_param -> var op_menorigualque var
+Rule 89    cond_param -> var op_menorigualque reserved
+Rule 90    cond_param -> reserved op_menorigualque int
+Rule 91    cond_param -> reserved op_menorigualque double
+Rule 92    cond_param -> reserved op_menorigualque var
+Rule 93    cond_param -> reserved op_menorigualque reserved
+Rule 94    cond_param -> var op_maiorigualque int
+Rule 95    cond_param -> var op_maiorigualque double
+Rule 96    cond_param -> var op_maiorigualque var
+Rule 97    cond_param -> var op_maiorigualque reserved
+Rule 98    cond_param -> reserved op_maiorigualque int
+Rule 99    cond_param -> reserved op_maiorigualque double
+Rule 100   cond_param -> reserved op_maiorigualque var
+Rule 101   cond_param -> reserved op_maiorigualque reserved
+Rule 102   cond_param -> var op_igualigual int
+Rule 103   cond_param -> var op_igualigual double
+Rule 104   cond_param -> var op_igualigual var
+Rule 105   cond_param -> var op_igualigual reserved
+Rule 106   cond_param -> reserved op_igualigual int
+Rule 107   cond_param -> reserved op_igualigual double
+Rule 108   cond_param -> reserved op_igualigual var
+Rule 109   cond_param -> reserved op_igualigual reserved
+Rule 110   cond_param -> var op_diferente int
+Rule 111   cond_param -> var op_diferente double
+Rule 112   cond_param -> var op_diferente var
+Rule 113   cond_param -> var op_diferente reserved
+Rule 114   cond_param -> reserved op_diferente int
+Rule 115   cond_param -> reserved op_diferente double
+Rule 116   cond_param -> reserved op_diferente var
+Rule 117   cond_param -> reserved op_diferente reserved
+Rule 118   cond_param -> var op_e int
+Rule 119   cond_param -> var op_e double
+Rule 120   cond_param -> var op_e var
+Rule 121   cond_param -> var op_e reserved
+Rule 122   cond_param -> reserved op_e int
+Rule 123   cond_param -> reserved op_e double
+Rule 124   cond_param -> reserved op_e var
+Rule 125   cond_param -> reserved op_e reserved
+Rule 126   cond_param -> varop_ou int
+Rule 127   cond_param -> varop_ou double
+Rule 128   cond_param -> varop_ou var
+Rule 129   cond_param -> varop_ou reserved
+Rule 130   cond_param -> reservedop_ou int
+Rule 131   cond_param -> reservedop_ou double
+Rule 132   cond_param -> reservedop_ou var
+Rule 133   cond_param -> reservedop_ou reserved
+Rule 134   impressao -> print
+Rule 135   true_false -> true
+Rule 136   true_false -> false
+Rule 137   cond_param -> cond_param op_e cond_param
+Rule 138   cond_param -> cond_param op_ou cond_param
+Rule 139   expr -> int
+Rule 140   expr -> double
+Rule 141   expr -> var
+Rule 142   expr -> reserved
+Rule 143   expr -> expr op_mais expr
+Rule 144   expr -> expr op_menos expr
+Rule 145   expr -> expr op_vezes expr
+Rule 146   expr -> expr op_divide expr
+Rule 147   expr -> expr op_modulo expr
+Rule 148   expr -> op_a_parenteses expr op_f_parenteses
+Rule 149   param_vazio -> <empty>
+Rule 150   param -> int
+Rule 151   param -> double
+Rule 152   param -> string
+Rule 153   param -> char
+Rule 154   param -> var
+Rule 155   param -> reserved
+Rule 156   param -> param op_virgula param
+Rule 157   funcao -> op_a_parenteses param_vazio op_f_parenteses
+Rule 158   funcao -> op_a_parenteses param op_f_parenteses
+Rule 159   senaose -> elif op_a_parenteses cond_param op_f_parenteses op_a_parenteses statements op_f_parenteses
+Rule 160   senaose -> senaose senaose
+Rule 161   senaose -> senaose
+
+Terminals, with rules where they appear
+
+and                  : 
+array                : 
+begin                : 
+boolean              : 
+case                 : 
+char                 : 153
+const                : 
+def                  : 
+div                  : 
+do                   : 
+double               : 38 42 46 54 58 62 71 75 79 83 87 91 95 99 103 107 111 115 119 123 127 131 140 151
+downto               : 
+else                 : 67 68
+end                  : 
+endif                : 
+endwhile             : 
+error                : 
+false                : 136
+for                  : 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+function             : 
+if                   : 65 66 67 68
+ignora               : 
+int                  : 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 37 41 45 53 57 61 70 74 78 82 86 90 94 98 102 106 110 114 118 122 126 130 139 150
+integer              : 
+mod                  : 
+not                  : 
+numero_mf            : 
+of                   : 
+op_a_chave           : 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 67 68 68 69
+op_a_colchete        : 
+op_a_parenteses      : 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 68 148 157 158 159 159
+op_aspas             : 
+op_comentario        : 3
+op_diferente         : 110 111 112 113 114 115 116 117
+op_diminuir          : 45 46 47 48 61 62 63 64
+op_divide            : 146
+op_divisao           : 
+op_dois_pontos       : 
+op_e                 : 118 119 120 121 122 123 124 125 137
+op_f_chave           : 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 67 68 68 69
+op_f_colchete        : 
+op_f_parenteses      : 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 68 148 157 158 159 159
+op_igual             : 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 49 50 51 52 53 54 55 56
+op_igualigual        : 102 103 104 105 106 107 108 109
+op_maiorigualque     : 94 95 96 97 98 99 100 101
+op_maiorque          : 78 79 80 81 82 83 84 85
+op_mais              : 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 143
+op_menorigualque     : 86 87 88 89 90 91 92 93
+op_menorque          : 70 71 72 73 74 75 76 77
+op_menos             : 144
+op_modulo            : 147
+op_multiplicar       : 
+op_negacao           : 
+op_ou                : 138
+op_ponto             : 
+op_ponto_virgula     : 
+op_somar             : 41 42 43 44 57 58 59 60
+op_vezes             : 145
+op_virgula           : 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 26 27 28 29 30 31 32 156
+or                   : 
+print                : 134
+procedure            : 
+program              : 
+range                : 
+repeat               : 
+return               : 
+string               : 34 50 152
+string_mf            : 
+then                 : 
+to                   : 
+true                 : 135
+until                : 
+var                  : 5 5 5 6 6 7 7 8 8 9 10 11 13 13 13 13 14 14 14 15 15 15 16 16 16 17 17 17 18 18 19 19 20 20 21 21 22 22 23 23 25 25 25 26 26 27 27 28 28 29 30 31 33 34 35 35 36 37 38 39 40 41 42 43 43 44 45 46 47 47 48 51 59 63 70 71 72 72 73 76 78 79 80 80 81 84 86 87 88 88 89 92 94 95 96 96 97 100 102 103 104 104 105 108 110 111 112 112 113 116 118 119 120 120 121 124 128 132 141 154
+variavel             : 
+variavel_mf          : 
+while                : 4
+write                : 
+writeln              : 
+
+Nonterminals, with rules where they appear
+
+CHAR                 : 39 55
+cond_param           : 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 68 137 137 138 138 159
+elif                 : 159
+expr                 : 33 49 143 143 144 144 145 145 146 146 147 147 148
+funcao               : 40 56 69
+impressao            : 
+op_a_chaves          : 4
+op_f_chaves          : 4
+param                : 156 156 158
+param_vazio          : 157
+reserved             : 6 7 8 9 9 10 10 11 11 12 12 12 14 15 16 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 24 24 26 27 28 29 29 30 30 31 31 32 32 32 36 44 48 49 50 51 52 52 53 54 55 56 57 58 59 60 60 61 62 63 64 64 73 74 75 76 77 77 81 82 83 84 85 85 89 90 91 92 93 93 97 98 99 100 101 101 105 106 107 108 109 109 113 114 115 116 117 117 121 122 123 124 125 125 129 133 142 155
+reservedop_ou        : 130 131 132 133
+senaose              : 66 67 160 160 161
+statement            : 1 2
+statements           : 1 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 65 66 67 67 68 68 69 159 0
+true_false           : 
+varop_ou             : 126 127 128 129
+
